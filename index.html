@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>التوصيل المجنون 🛵</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛵</text></svg>">
+</head>
+<body>
+
+<div id="screen-home" class="screen active"><div class="wrap center">
+  <div class="logo">🛵💨</div>
+  <h1>التوصيل المجنون</h1>
+  <p class="sub">الزبون جيعان.. والطريق ما كتسالي!</p>
+  <div class="how">
+    <p>🍲 وصّل 5 طلبات قبل ما يسالي الوقت</p>
+    <p>🚕 طاكسي، 🫏 كروسة، 🚌 طوبيس، 👮 شرطي، 🕳️ حفر..</p>
+    <p>⚡ كلما حليتي العائق بسرعة، ربحتي وقت وتوربو</p>
+    <p>😠 ما تخليش الزبون يغضب — تقدر تتصل به مرتين</p>
+  </div>
+  <button class="btn" onclick="App.play()">▶ يلاه نبداو</button>
+  <p class="best">🏆 أحسن نتيجة: <strong id="home-best">0</strong> درهم</p>
+  <button class="icon-btn" id="sound-btn" onclick="App.toggleSound()">🔊</button>
+</div></div>
+
+<div id="screen-game" class="screen"><div class="wrap">
+  <div class="hud">
+    <div>📦 طلب <strong id="h-order">1</strong>/5</div>
+    <div>💰 <strong id="h-money">0</strong> د</div>
+    <div class="timebox">⏱ <strong id="h-time">60</strong></div>
+    <button class="icon-btn small" onclick="App.home()">✕</button>
+  </div>
+  <div class="customer">
+    <span id="c-face">😄</span>
+    <div class="cinfo"><div id="c-msg" class="bubble"></div><div class="anger"><div id="anger-fill"></div></div></div>
+  </div>
+  <div class="scene" id="scene">
+    <div class="city">🏢🏠🌴🏪🌳🏬🏠🌴🏢🏪🌳🏬🏢🏠🌴🏪🌳🏬🏠🌴🏢🏪🌳🏬</div>
+    <div class="road"><div class="stripes"></div></div>
+    <div id="rider">🛵</div>
+    <div id="obst"></div>
+    <div id="flash" class="flash"></div>
+  </div>
+  <div class="prog-wrap"><span>🏪</span>
+    <div class="progress"><div id="prog-fill"></div><span id="prog-bike">🛵</span></div><span>🏠</span></div>
+  <div id="panel" class="panel"></div>
+  <button class="btn call" id="call-btn" onclick="Game.callCustomer()">📞 اتصل بالزبون (2)</button>
+</div></div>
+
+<div id="screen-end" class="screen"><div class="wrap center">
+  <div class="logo">🏁</div>
+  <h1>انتهى الدوام!</h1>
+  <h2 id="end-rank">🛵</h2>
+  <div class="endstats">
+    <div><strong id="end-money">0</strong><span>درهم</span></div>
+    <div><strong id="end-del">0/5</strong><span>طلبات وصلت</span></div>
+    <div><strong id="end-best">0</strong><span>أحسن نتيجة</span></div>
+  </div>
+  <button class="btn" onclick="App.play()">🔄 عاود اللعب</button>
+  <button class="btn ghost" onclick="App.home()">🏠 الرئيسية</button>
+</div></div>
+
+<div id="modal-root"></div>
+<script src="sounds.js"></script>
+<script src="obstacles.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
